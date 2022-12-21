@@ -13,7 +13,7 @@ export default function Header() {
       }`}
     >
       <div className="container flex items-center justify-between py-2">
-        <p className="hidden lg:inline-flex text-base md:text-lg lg:text-2xl font-main font-semibold">
+        <p className="hidden lg:inline-flex text-base md:text-lg 2xl:text-2xl font-main font-semibold">
           🖐️ Hi there. This is a model project by Jonas, the great Udemy
           Instructor ever.🐐{' '}
         </p>

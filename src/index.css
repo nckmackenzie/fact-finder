@@ -20,6 +20,14 @@
     @apply bg-zinc-50 text-stone-700;
   }
 
+  .dark-card {
+    @apply bg-stone-600 text-zinc-50;
+  }
+
+  .light-card {
+    @apply bg-gray-300 text-stone-900;
+  }
+
   .center {
     @apply flex items-center justify-center;
   }
@@ -30,5 +38,13 @@
 
   .btn-large {
     @apply px-4 py-2 lg:px-6 lg:py-4 text-base md:text-xl lg:text-2xl;
+  }
+
+  .btn-normal {
+    @apply px-2 py-1 lg:px-4 lg:py-2 text-sm md:text-base lg:text-lg;
+  }
+
+  .input {
+    @apply p-2 outline-0 rounded-lg w-full font-main;
   }
 }

@@ -6,7 +6,7 @@ function CategoriesSelect({ categories }) {
     <select
       name="category"
       id="category"
-      className={`input flex-1 ${darkMode ? 'bg-slate-700' : 'bg-stone-50'}`}
+      className={`input flex-1 ${darkMode ? 'bg-slate-700' : 'bg-gray-400'}`}
       defaultValue=""
     >
       <option value="" disabled>

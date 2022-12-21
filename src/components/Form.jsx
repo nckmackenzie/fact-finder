@@ -1,4 +1,6 @@
 import { useTheme } from '../context/ThemeProvider';
+import CategoriesSelect from './CategoriesSelect';
+import { categories } from '../data/data';
 function Form() {
   const { darkMode } = useTheme();
   return (
@@ -25,15 +27,7 @@ function Form() {
           }`}
           placeholder="enter source url"
         />
-        <select
-          name="category"
-          id="category"
-          className={`input flex-1 ${
-            darkMode ? 'bg-slate-700' : 'bg-stone-50'
-          }`}
-        >
-          <option value="">Select category</option>
-        </select>
+        {categories && <CategoriesSelect categories={categories} />}
       </div>
       <button className="btn btn-primary btn-normal">post</button>
     </form>

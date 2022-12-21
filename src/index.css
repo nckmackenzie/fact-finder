@@ -33,7 +33,11 @@
   }
 
   .btn {
-    @apply bg-gradient border-0 outline-none uppercase cursor-pointer text-inherit rounded-full shadow-md font-display font-semibold transition-all hover:scale-105 hover:-rotate-2;
+    @apply border-0 outline-none uppercase cursor-pointer text-inherit rounded-full shadow-md font-display font-semibold transition-all hover:scale-105 hover:-rotate-2;
+  }
+
+  .btn-primary {
+    @apply bg-gradient;
   }
 
   .btn-large {

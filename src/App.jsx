@@ -2,6 +2,7 @@ import Header from './components/Header';
 import LogoFormToggle from './components/LogoFormToggle';
 import Container from './components/Container';
 import { useTheme } from './context/ThemeProvider';
+import MainContent from './components/MainContent';
 function App() {
   const { darkMode } = useTheme();
   return (
@@ -10,6 +11,7 @@ function App() {
       <main>
         <Container>
           <LogoFormToggle />
+          <MainContent />
         </Container>
       </main>
     </div>

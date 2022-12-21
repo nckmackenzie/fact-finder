@@ -35,7 +35,7 @@ function Form() {
           <option value="">Select category</option>
         </select>
       </div>
-      <button className="btn btn-normal">post</button>
+      <button className="btn btn-primary btn-normal">post</button>
     </form>
   );
 }

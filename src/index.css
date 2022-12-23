@@ -51,4 +51,8 @@
   .input {
     @apply p-2 outline-0 rounded-lg w-full font-main;
   }
+
+  .alert {
+    @apply mt-2 w-full p-2 md:p-4 2xl:px-6 2xl:py-4 text-slate-800 font-semibold font-main text-lg rounded-md flex justify-between items-center;
+  }
 }

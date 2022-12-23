@@ -30,7 +30,7 @@ function Form() {
       return;
     }
     try {
-      const { data, error } = await supabase
+      const { error } = await supabase
         .from('facts')
         .insert({
           id: 1,

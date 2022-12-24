@@ -4,7 +4,7 @@ import { useTheme } from '../context/ThemeProvider';
 import CategoriesSelect from './CategoriesSelect';
 import { categories } from '../data/data';
 import Alert from './Alert';
-function Form() {
+function Form({ setFacts, setShowForm }) {
   const [formSettings, setFormSettings] = useState({
     displayed: false,
     status: null,
@@ -30,10 +30,10 @@ function Form() {
       return;
     }
     try {
-      const { error } = await supabase
+      const { data, error } = await supabase
         .from('facts')
         .insert({
-          id: 1,
+          // id: 1,
           category: categoryVal,
           fact: factVal,
           source: sourceVal,
@@ -49,10 +49,31 @@ function Form() {
         status: 'success',
         message: 'Fact saved!',
       });
+
+      setFacts(prev => {
+        return [
+          ...prev,
+          {
+            id: data[0].id,
+            category: data[0].category,
+            fact: data[0].fact,
+            source: data[0].source,
+            upvote: data[0].upvote,
+            interesting: data[0].interesting,
+            dislike: data[0].dislike,
+          },
+        ];
+      });
+
       factRef.current.value =
         sourceRef.current.value =
         categoryRef.current.value =
           '';
+
+      setTimeout(() => {
+        setFormSettings({ displayed: false, status: null, message: '' });
+        setShowForm(false);
+      }, 3000);
     } catch (error) {
       console.error(error);
     }

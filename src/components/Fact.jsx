@@ -1,6 +1,6 @@
 import { useTheme } from '../context/ThemeProvider';
 
-function Fact() {
+function Fact(props) {
   const { darkMode } = useTheme();
   return (
     <article
@@ -9,12 +9,9 @@ function Fact() {
       }`}
     >
       <div className="max-w-full md:max-w-[50%]">
-        <p className="text-base font-main">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-          dolorem vero corrupti soluta, voluptatem sequi.
-        </p>
+        <p className="text-base font-main">{props.fact}</p>
         <a
-          href=""
+          href={props.source}
           target="_blank"
           className="text-blue-400 font-main text-sm self-end"
         >
@@ -23,17 +20,17 @@ function Fact() {
       </div>
       <div className="flex justify-between items-center flex-1">
         <span className="bg-technology inline-flex px-1 rounded-full text-xs font-main font-semibold max-w-max">
-          TECHNOLOGY
+          {props.category.toString().toUpperCase()}
         </span>
         <div className="flex gap-1 center">
           <button className="bg-slate-400 px-4 py-1 center rounded-full">
-            👍 <span className="text-sm font-main">25</span>
+            👍 <span className="text-sm font-main">{props.upvote}</span>
           </button>
           <button className="bg-slate-400 px-4 py-1 center rounded-full">
-            😉 <span className="text-sm font-main">25</span>
+            😉 <span className="text-sm font-main">{props.interesting}</span>
           </button>
           <button className="bg-slate-400 px-4 py-1 center rounded-full">
-            ⛔ <span className="text-sm font-main">25</span>
+            ⛔ <span className="text-sm font-main">{props.dislike}</span>
           </button>
         </div>
       </div>

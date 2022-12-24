@@ -19,7 +19,9 @@ function Fact(props) {
         </a>
       </div>
       <div className="flex justify-between items-center flex-1">
-        <span className="bg-technology inline-flex px-1 rounded-full text-xs font-main font-semibold max-w-max">
+        <span
+          className={`bg-${props.category} inline-flex px-1 rounded-full text-xs font-main font-semibold max-w-max`}
+        >
           {props.category.toString().toUpperCase()}
         </span>
         <div className="flex gap-1 center">

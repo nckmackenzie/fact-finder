@@ -3,7 +3,7 @@ import Form from './Form';
 import FormToggle from './FormToggle';
 import Logo from './Logo';
 
-function LogoFormToggle() {
+function LogoFormToggle({ setFacts }) {
   const [showForm, setShowForm] = useState(false);
   return (
     <>
@@ -11,7 +11,7 @@ function LogoFormToggle() {
         <Logo />
         <FormToggle setShowForm={setShowForm} showForm={showForm} />
       </div>
-      {showForm && <Form />}
+      {showForm && <Form setFacts={setFacts} setShowForm={setShowForm} />}
     </>
   );
 }

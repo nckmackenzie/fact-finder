@@ -10,10 +10,16 @@ function Form({ setFacts, setShowForm }) {
     status: null,
     message: '',
   });
+  const [wordsCount, setWordsCount] = useState(200);
   const { darkMode } = useTheme();
   const factRef = useRef();
   const sourceRef = useRef();
   const categoryRef = useRef();
+
+  const onChangeHandler = e => {
+    const remainingCharacters = 200 - Number(e.target.value.length);
+    setWordsCount(remainingCharacters);
+  };
 
   const submitHandler = async e => {
     e.preventDefault();
@@ -102,8 +108,9 @@ function Form({ setFacts, setShowForm }) {
             id="fact"
             className={`input ${darkMode ? 'bg-slate-700' : 'bg-stone-50'}`}
             placeholder="share a fact with the world"
+            onChange={onChangeHandler}
           />
-          <span className="font-main font-bold">200</span>
+          <span className="font-main font-bold">{wordsCount}</span>
         </div>
         <div className="flex flex-col md:flex-row gap-2 flex-1">
           <input
